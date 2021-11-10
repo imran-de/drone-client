@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../Images/drone.png';
 const Navigation = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="" expand="lg">
             <Container className="header">
                 <Navbar.Brand as={Link} to="/"><img className="site-logo" src={logo} alt="The drone logo" /> Drone</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

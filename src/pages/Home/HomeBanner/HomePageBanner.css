@@ -1,0 +1,80 @@
+.home-page-banner{
+    background: url('https://i.ibb.co/y0n2jjv/banner-bg-3.jpg')center center no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;    
+}
+.banner-content{
+    padding: 200px0;
+    margin-top: 139px;
+}
+.banner-content h1 {
+    color: #fff;
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-top: -10px;
+}
+.banner-content p {
+    color: #fff;
+    line-height: 28px;
+}
+.banner-buttons {
+    margin-top: 42px;
+}
+.banner-buttons a.banner-button,.banner-buttons span.banner-button {
+    padding: 16px 36px;
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    background: #3f86fe;
+    background-image: -webkit-linear-gradient(85deg, #2d7bff 0%, #4c8eff 100%);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(13, 21, 75, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(13, 21, 75, 0.2);
+    border-radius: 50px;
+}
+.banner-content .banner-buttons span.banner-button {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    margin-left: 16px;
+    text-decoration: none;
+}
+.banner-content .banner-buttons span.text {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 6px;
+}
+.banner-animation{
+    position: absolute;
+}
+.banner-animation.animation-1 {
+    width: 400px;
+    right: 150px;
+    top: 20%;
+    animation: animation-1 alternate timing-function delay iteration-count direction fill-mode;
+}
+.banner-animation.animation-3 {
+    right: 50px;
+    height: 350px;
+    bottom: 0;
+}
+@keyframes animation-1 {
+    form{
+        left: -10%;
+    }
+    to{
+        right: 10%;
+    }
+}
