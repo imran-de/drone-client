@@ -19,7 +19,7 @@ const HomepageReview = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <Carousel>
-                            <Carousel.Item interval={1000}>
+                            <Carousel.Item>
                                 <div className="slider d-flex justify-content-center">
                                     <Card>
                                         <div className="d-flex justify-content-center align-items-center pt-3">
@@ -35,7 +35,7 @@ const HomepageReview = () => {
                                     </Card>
                                 </div>
                             </Carousel.Item>
-                            <Carousel.Item interval={1000}>
+                            <Carousel.Item>
                                 <div className="slider d-flex justify-content-center">
                                     <Card>
                                         <div className="d-flex justify-content-center align-items-center pt-3">
@@ -51,7 +51,7 @@ const HomepageReview = () => {
                                     </Card>
                                 </div>
                             </Carousel.Item>
-                            <Carousel.Item interval={1000}>
+                            <Carousel.Item>
                                 <div className=" slider d-flex justify-content-center">
                                     <Card>
                                         <div className="d-flex justify-content-center align-items-center pt-3">
