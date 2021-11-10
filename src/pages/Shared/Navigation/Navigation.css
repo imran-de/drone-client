@@ -1,0 +1,23 @@
+.site-logo{
+    width: 44px;
+    height: 44px;
+}
+.header{
+    background: #121f59;
+    padding: 0 20px 0;
+    border-radius: 50px;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.4);
+}
+.header a,.header .nav-link{
+    color: #fff!important;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header a:hover{
+    border-bottom: 2px solid #fff;
+}
+.navbar-brand{
+    font-size: 22px!important;
+}
