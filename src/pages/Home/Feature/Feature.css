@@ -1,0 +1,17 @@
+.card{
+    border: none;
+}
+.feature-icon-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: -webkit-linear-gradient(
+85deg, #2d7bff 0%, #4c8eff 100%);
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+}
+.feature-icon-box img{
+    width: 35px;
+    height: 35px;
+}

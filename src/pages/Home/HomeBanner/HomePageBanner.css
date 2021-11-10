@@ -5,7 +5,6 @@
     min-height: 100vh;    
 }
 .banner-content{
-    padding: 200px0;
     margin-top: 139px;
 }
 .banner-content h1 {
@@ -70,11 +69,15 @@
     height: 350px;
     bottom: 0;
 }
-@keyframes animation-1 {
-    form{
-        left: -10%;
+@media screen and (max-width: 767px) {
+    .banner-content{
+        margin-top: 39px;
     }
-    to{
-        right: 10%;
+    .banner-content h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .banner-animation{
+        display:none;
     }
 }

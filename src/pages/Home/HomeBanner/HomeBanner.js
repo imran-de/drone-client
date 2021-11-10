@@ -11,8 +11,8 @@ const HomeBanner = () => {
         <Container fluid className="home-page-banner">
             <TopNavigation />
             <Navigation />
-            <img class="banner-animation animation-1" src="https://i.ibb.co/Y7RQZxq/drone-1.png" alt="" />
-            <img class="banner-animation animation-3" src="https://i.ibb.co/8rnSSKy/man-1.png" alt="" />
+            <img className="banner-animation animation-1" src="https://i.ibb.co/Y7RQZxq/drone-1.png" alt="" />
+            <img className="banner-animation animation-3" src="https://i.ibb.co/8rnSSKy/man-1.png" alt="" />
             <Container>
                 <div className="row justify-content-xl-start justify-content-lg-center justify-content-start">
                     <div className="col-xl-8 col-lg-9 col-md-10">
