@@ -1,0 +1,20 @@
+.top-navigation i{
+    color: #e9edff;
+}
+.top-navigation a{
+    color: #e9edff!important;
+    font-size: 14px;
+}
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;    
+    background-color: #263780;
+    border-radius: 50%;
+
+}
+.user i{
+    color: #e9edff;
+}
