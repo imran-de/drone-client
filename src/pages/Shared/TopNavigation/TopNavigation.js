@@ -1,8 +1,11 @@
 import React from 'react';
 import './TopNavigation.css';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row, Button } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const TopNavigation = () => {
+    const { user, logOut } = useAuth();
     return (
         <Container className="top-navigation">
             <Row>
@@ -18,8 +21,15 @@ const TopNavigation = () => {
                     <Navbar bg="" variant="light">
                         <Nav className="me-auto">
                             <Nav.Link href="#home"><i className="fas fa-cart-plus"></i> $0.00</Nav.Link>
-                            <Navbar.Brand href="#home" className="user"><i className="fas fa-user"></i></Navbar.Brand>
-                            <Nav.Link href="/login">Sign in | Join</Nav.Link>
+                            {user?.email ? <>
+                                <Nav.Link as={Link} to="/profile">{user?.displayName}</Nav.Link>
+                                <Navbar.Brand href="#home" className="user"><img src={user?.photoURL} alt="logged in user" /></Navbar.Brand>
+                                <Nav.Link href="/login" style={{ marginTop: '-10px' }}><Button onClick={logOut} className="btn btn-danger">LogOut</Button></Nav.Link>
+                            </>
+                                : <>
+                                    <Navbar.Brand href="#home" className="user"><i className="fas fa-user"></i></Navbar.Brand>
+                                    <Nav.Link as={Link} to="/login">Sign in | Join</Nav.Link>
+                                </>}
                         </Nav>
                     </Navbar>
                 </Col>

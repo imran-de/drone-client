@@ -7,6 +7,7 @@ import Purchase from './pages/Purchase/Purchase/Purchase';
 import Shop from './pages/Shop/Shop/Shop';
 import SignIn from './pages/Login/SignIn/SignIn';
 import Register from './pages/Login/Register/Register';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
             <Route path="/shop">
               <Shop />
             </Route>
-            <Route path="/purchase">
+            <PrivateRoute path="/purchase">
               <Purchase />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <SignIn />
             </Route>

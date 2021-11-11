@@ -37,40 +37,41 @@ const SignIn = () => {
                     {/* preLoader add */}
                     {isLoading ? <div className="d-flex justify-content-center">
                         <Spinner animation="border" variant="primary" />
-                    </div> : <>
-                        {/* login form */}
-                        <Form onSubmit={handleSubmit(onSubmit)}>
-                            <Form.Group className="mb-3">
-                                <Form.Label htmlFor="email">Email</Form.Label>
-                                <Form.Control type="email" id="email" {...register("email")} placeholder="xyz@xy.com" />
-                            </Form.Group>
-                            <Form.Group className="mb-3">
-                                <Form.Label htmlFor="password">Password</Form.Label>
-                                <Form.Control type="password" id="password" {...register("password")} placeholder="your password" />
-                            </Form.Group>
-                            <div className="text-center">
-                                <Button type="submit" className="bg-blue px-5">LOGIN</Button>
+                    </div>
+                        : <>
+                            {/* login form */}
+                            <Form onSubmit={handleSubmit(onSubmit)}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label htmlFor="email">Email</Form.Label>
+                                    <Form.Control type="email" id="email" {...register("email")} placeholder="xyz@xy.com" />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label htmlFor="password">Password</Form.Label>
+                                    <Form.Control type="password" id="password" {...register("password")} placeholder="your password" />
+                                </Form.Group>
+                                <div className="text-center">
+                                    <Button type="submit" className="bg-blue px-5">LOGIN</Button>
+                                </div>
+                            </Form>
+                            <div className="text-center pt-3">
+                                <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                                <p>---------------------------------------</p>
+                                <div className="d-flex justify-content-center gap-2">
+                                    <button onClick={() => signInWithGoogle(history, redirect_uri)} className="d-block btn btn-outline-danger">
+                                        <i className="fab fa-google pe-3"></i>
+                                        Sign-in with Google
+                                    </button>
+                                    <button className="d-block btn btn-outline-primary">
+                                        <i className="fab fa-facebook-square pe-3"></i>
+                                        Sign-in with Facebook
+                                    </button>
+                                    <button className="d-block btn btn-outline-dark">
+                                        <i className="fab fa-github pe-3"></i>
+                                        Sign-in with Github
+                                    </button>
+                                </div>
                             </div>
-                        </Form>
-                        <div className="text-center pt-3">
-                            <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
-                            <p>---------------------------------------</p>
-                            <div className="d-flex justify-content-center gap-2">
-                                <button onClick={() => signInWithGoogle(history, redirect_uri)} className="d-block btn btn-outline-danger">
-                                    <i className="fab fa-google pe-3"></i>
-                                    Sign-in with Google
-                                </button>
-                                <button className="d-block btn btn-outline-primary">
-                                    <i className="fab fa-facebook-square pe-3"></i>
-                                    Sign-in with Facebook
-                                </button>
-                                <button className="d-block btn btn-outline-dark">
-                                    <i className="fab fa-github pe-3"></i>
-                                    Sign-in with Github
-                                </button>
-                            </div>
-                        </div>
-                    </> /*end preloader*/}
+                        </> /*end preloader*/}
                 </Col>
             </Row>
 

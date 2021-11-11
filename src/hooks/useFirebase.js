@@ -35,7 +35,7 @@ const useFirebase = () => {
     }
 
     //signIn with email and password
-    const signInWithEmailPassword = ({ email, password, history, destination }) => {
+    const signInWithEmailPassword = (email, password, history, destination) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -58,19 +58,20 @@ const useFirebase = () => {
     }
     // create user with email and pass
     const registerWithEmailPassword = (name, email, password, history, destination) => {
-
+        //default profile picture
+        const photoUrl = "https://casperkruger.co.za/wp-content/uploads/2014/08/Profile-Pic-Demo.png"
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
                 user.displayName = name;
+                user.photoURL = photoUrl;
                 setUser(user);
                 //access token
                 const token = user.accessToken;
                 localStorage.setItem("token", token);
-                //user information update
-                const photoUrl = "https://casperkruger.co.za/wp-content/uploads/2014/08/Profile-Pic-Demo.png"
+                //user information update                
                 updateUser(name, photoUrl);
 
                 setMsg("LogIn Success");
