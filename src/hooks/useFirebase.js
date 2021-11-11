@@ -6,7 +6,7 @@ initializeFirebase();
 const useFirebase = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [token, setToken] = useState('');
     const [msg, setMsg] = useState('');
 
@@ -104,6 +104,7 @@ const useFirebase = () => {
 
     //observe user state
     useEffect(() => {
+        setIsLoading(true);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
