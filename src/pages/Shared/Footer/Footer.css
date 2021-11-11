@@ -8,7 +8,7 @@
     background: url("http://pixner.net/todas/todas-demo/assets/img/footer-bg-1.png") top center no-repeat;
     background-size: cover;
     position: relative; }
-    .footer:after {
+.footer:after {
       position: absolute;
       content: '';
       left: 0;
@@ -18,14 +18,14 @@
       background: url("http://pixner.net/todas/todas-demo/assets/img/footer-bg-2.png") top center no-repeat;
       background-size: cover;
       z-index: -1; }
-    .footer .news-letter .section-title h2 {
+.footer .news-letter .section-title h2 {
       font-size: 30px;
       margin-bottom: 0; }
-    .footer .news-letter form {
+.footer .news-letter form {
       position: relative;
       border-radius: 50px;
       margin-bottom: 70px; }
-      .footer .news-letter form input {
+.footer .news-letter form input {
         height: 50px;
         width: 100%;
         border: 1px solid #333355;
@@ -34,19 +34,19 @@
         padding: 0 230px 0 30px;
         border-radius: 50px;
         background: transparent; }
-        .footer .news-letter form input::-webkit-input-placeholder {
+.footer .news-letter form input::-webkit-input-placeholder {
           color: #acc0e7;
           opacity: .6; }
-        .footer .news-letter form input:-ms-input-placeholder {
+.footer .news-letter form input:-ms-input-placeholder {
           color: #acc0e7;
           opacity: .6; }
-        .footer .news-letter form input::-ms-input-placeholder {
+.footer .news-letter form input::-ms-input-placeholder {
           color: #acc0e7;
           opacity: .6; }
-        .footer .news-letter form input::placeholder {
+.footer .news-letter form input::placeholder {
           color: #acc0e7;
           opacity: .6; }
-      .footer .news-letter form button {
+.footer .news-letter form button {
         width: 200px;
         height: 50px;
         position: absolute;
@@ -63,10 +63,17 @@
         font-weight: 700;
         outline: none;
         cursor: pointer; }
-    .footer .link-area {
+.footer .link-area {
       padding: 120px 0 108px;
       border-top: 1px dotted #54546e; }
-      .footer .link-area .single-usefull-link span.title {
+
+.footer .link-area .title{
+  text-align: center;
+}
+.footer .link-area li{
+  list-style: none;
+}
+.footer .link-area .single-usefull-link span.title {
         font-family: "Poppins", sans-serif;
         font-size: 24px;
         font-weight: 600;
@@ -74,7 +81,7 @@
         text-transform: capitalize;
         display: block;
         margin-bottom: 20px; }
-      .footer .link-area .single-usefull-link ul li a {
+.footer .link-area .single-usefull-link ul li a {
         display: inline-block;
         font-size: 16px;
         color: #bac9e6;
@@ -87,32 +94,32 @@
         -moz-transition: all 0.3s ease-in;
         -o-transition: all 0.3s ease-in;
         transition: all 0.3s ease-in; }
-        .footer .link-area .single-usefull-link ul li a:hover {
+.footer .link-area .single-usefull-link ul li a:hover {
           color: #fff;
           margin-left: 10px; }
-        .footer .link-area .single-usefull-link ul li a:before {
+.footer .link-area .single-usefull-link ul li a:before {
           content: '\f105';
           font-family: "Font Awesome 5 Free";
           font-weight: 900;
           margin-right: 10px; }
-    .footer .foot-bottom {
+.footer .foot-bottom {
       background: #0d154b; }
-      .footer .foot-bottom .copyright-text {
+.footer .foot-bottom .copyright-text {
         color: #bac9e6;
         font-size: 15px;
         margin: 0; }
-        .footer .foot-bottom .copyright-text a {
+.footer .foot-bottom .copyright-text a {
           color: #bac9e6; }
-      .footer .foot-bottom .partners {
+.footer .foot-bottom .partners {
         text-align: right;
         padding: 15px 0; }
-        .footer .foot-bottom .partners ul li {
+.footer .foot-bottom .partners ul li {
           display: inline-block; }
-          .footer .foot-bottom .partners ul li a {
+.footer .foot-bottom .partners ul li a {
             display: inline-block;
             width: 44px;
             margin-right: 16px;
             border-radius: 3px;
             overflow: hidden; }
-            .footer .foot-bottom .partners ul li a img {
+.footer .foot-bottom .partners ul li a img {
               width: 100%; }

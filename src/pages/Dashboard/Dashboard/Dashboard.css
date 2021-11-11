@@ -1,0 +1,16 @@
+.link-area, .link-area a{
+    background: #121f51;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+.dashboard-nav li{
+    list-style: none;
+    line-height: 30px;
+    transition: ease-in-out .5s;
+}
+.dashboard-nav li:hover{
+    padding-left: 10px;
+}
+.link-area a:hover{
+    color: #0f0ff0;
+}
