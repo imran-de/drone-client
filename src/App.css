@@ -9,3 +9,9 @@ body{
 a{
   text-decoration: none;
 }
+.blue{
+  color: #121f59;
+}
+.bg-blue{
+  background: #3f86fe;
+}
