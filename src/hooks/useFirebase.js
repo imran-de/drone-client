@@ -22,15 +22,14 @@ const useFirebase = () => {
                 // The signed-in user info.
                 const user = result.user;
                 setUser(user);
-                //redirect user
-                history.replace(destination);
-                console.log(user);
+                setMsg("LogIn Success");
                 //user data save on mongodb
                 saveUser(user.email, user.displayName, 'PUT');
                 //access token
                 const token = user.accessToken;
                 localStorage.setItem("token", token);
-                // ...
+                //redirect user
+                history.replace(destination);
             }).catch((error) => {
                 // Handle Errors here.
                 const errorMessage = error.message;
@@ -47,6 +46,7 @@ const useFirebase = () => {
                 // Signed in 
                 const user = userCredential.user;
                 setUser(user)
+                setMsg("Login Success");
                 //redirect user
                 history.replace(destination);
                 //access token
@@ -79,13 +79,11 @@ const useFirebase = () => {
                 //user information update                
                 updateUser(name, photoUrl);
 
-                setMsg("LogIn Success");
+                setMsg("Registration Success");
                 //save user data in mongodb
                 saveUser(email, name, 'POST');
                 //redirect home page
                 history.replace(destination);
-
-                // ...
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -93,6 +91,7 @@ const useFirebase = () => {
                 // ..
             }).finally(setIsLoading(false));
     }
+
     //update user Information
     const updateUser = (name, photoUrl) => {
         updateProfile(auth.currentUser, {
@@ -151,8 +150,9 @@ const useFirebase = () => {
             body: JSON.stringify(user),
         })
             .then(res => res.json())
-            .then(result => {
-                console.log('result');
+            .then(() => {
+                //data saved
+                setMsg("user data saved successfully in database")
             })
             .catch(error => {
                 console.log("error:", error);
