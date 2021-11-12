@@ -9,6 +9,7 @@ import SignIn from './pages/Login/SignIn/SignIn';
 import Register from './pages/Login/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Reviews from './pages/Reviews/Reviews';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/shop">
               <Shop />
+            </Route>
+            <Route path="/reviews">
+              <Reviews />
             </Route>
             <PrivateRoute path="/purchase/:id/:name">
               <Purchase />
