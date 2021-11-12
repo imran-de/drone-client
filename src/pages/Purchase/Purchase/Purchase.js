@@ -18,7 +18,7 @@ const Purchase = () => {
 
     //load selected product details
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://imran-drone.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -34,7 +34,7 @@ const Purchase = () => {
 
         const confirm = window.confirm(`are you sure to confirm order`);
         if (confirm) {
-            fetch('http://localhost:5000/add-order', {
+            fetch('https://imran-drone.herokuapp.com/add-order', {
                 method: "POST",
                 headers: { 'content-type': "application/json" },
                 body: JSON.stringify(data)

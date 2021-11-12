@@ -11,7 +11,7 @@ const Review = () => {
         data.photoURL = user?.photoURL;
         const confirm = window.confirm(`are you sure to add review`);
         if (confirm) {
-            fetch('http://localhost:5000/add-review', {
+            fetch('https://imran-drone.herokuapp.com/add-review', {
                 method: "POST",
                 headers: { 'content-type': "application/json" },
                 body: JSON.stringify(data)

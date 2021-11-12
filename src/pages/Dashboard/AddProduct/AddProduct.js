@@ -8,7 +8,7 @@ const AddProduct = () => {
     const onSubmit = data => {
         const confirm = window.confirm(`are you sure to add product "${data?.productName}"`);
         if (confirm) {
-            fetch('http://localhost:5000/add-product', {
+            fetch('https://imran-drone.herokuapp.com/add-product', {
                 method: "POST",
                 headers: { 'content-type': "application/json" },
                 body: JSON.stringify(data)

@@ -8,7 +8,7 @@ const HomepageProduct = () => {
     const [products, setProducts] = useState([]);
     const productLimit = 6;
     useEffect(() => {
-        fetch(`http://localhost:5000/products?limit=${productLimit}`)
+        fetch(`https://imran-drone.herokuapp.com/products?limit=${productLimit}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

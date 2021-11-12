@@ -7,7 +7,7 @@ const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     //load all products
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://imran-drone.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -16,7 +16,7 @@ const ManageProducts = () => {
     const handleDelete = (id, name) => {
         const confirm = window.confirm(`Are you sure to delete "${name}"`)
         if (confirm) {
-            fetch(`http://localhost:5000/product/${id}`, {
+            fetch(`https://imran-drone.herokuapp.com/product/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" }
 

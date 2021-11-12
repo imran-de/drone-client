@@ -145,17 +145,23 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://imran-drone.herokuapp.com/user', {
             method: method,
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
         })
-            .then()
+            .then(res => res.json())
+            .then(result => {
+                console.log('result');
+            })
+            .catch(error => {
+                console.log("error:", error);
+            })
     }
 
     // admin check
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`, {
+        fetch(`https://imran-drone.herokuapp.com/users/${user?.email}`, {
             method: 'GET',
             headers: { 'content-type': 'application/json' },
         }).then(res => res.json())

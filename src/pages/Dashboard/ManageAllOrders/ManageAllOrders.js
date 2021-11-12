@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://imran-drone.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -21,7 +21,7 @@ const ManageAllOrders = () => {
         const confirm = window.confirm("Are you sure to change order status?");
         if (confirm) {
             setStatusUpdate(false);
-            fetch(`http://localhost:5000/order?id=${id}&status=${status}`, {
+            fetch(`https://imran-drone.herokuapp.com/order?id=${id}&status=${status}`, {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
             })
@@ -41,7 +41,7 @@ const ManageAllOrders = () => {
     const handleCancel = id => {
         const confirm = window.confirm("Are you sure to cancel the order?");
         if (confirm) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://imran-drone.herokuapp.com/order/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

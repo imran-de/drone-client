@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     const onSubmit = data => {
         const confirm = window.confirm(`are you sure to make admin "${data?.email}"`);
         if (confirm) {
-            fetch('http://localhost:5000/users/admin', {
+            fetch('https://imran-drone.herokuapp.com/users/admin', {
                 method: "POST",
                 headers: { 'content-type': "application/json" },
                 body: JSON.stringify(data)

@@ -15,7 +15,7 @@ const SignIn = () => {
     //catch private route redirect page url
     const redirect_uri = location.state?.from || '/';
 
-    const { signInWithGoogle, signInWithEmailPassword, isLoading, user } = useAuth();
+    const { signInWithGoogle, signInWithEmailPassword, isLoading } = useAuth();
     //react hook form
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {

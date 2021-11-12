@@ -10,7 +10,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://imran-drone.herokuapp.com/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -22,7 +22,7 @@ const MyOrders = () => {
     const handleCancel = (id) => {
         const confirm = window.confirm("Are you sure to cancel the order?");
         if (confirm) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://imran-drone.herokuapp.com/order/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

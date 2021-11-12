@@ -9,7 +9,7 @@ const HomepageReview = () => {
     const [reviews, setReviews] = useState([]);
     //load reviews
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://imran-drone.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
