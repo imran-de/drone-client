@@ -59,6 +59,10 @@ const ManageAllOrders = () => {
     }
     return (
         <Container className="my-5">
+            <div className="d-flex justify-content-between">
+                <h2 className="fs-1 blue">Manage All Orders</h2>
+                <h2 className="blue">Total: {orders?.length}</h2>
+            </div>
             {/* preloader */}
             {loading && <div className="d-flex justify-content-center align-items-center">
                 <Spinner animation="border" role="status">

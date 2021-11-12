@@ -20,7 +20,6 @@ const SignIn = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         signInWithEmailPassword(data.email, data.password, history, redirect_uri);
-        console.log(user);
     }
 
     return (

@@ -13,7 +13,7 @@ const useFirebase = () => {
     const auth = getAuth();
 
     //sign in with google account
-    const signInWithGoogle = () => {
+    const signInWithGoogle = (history, destination) => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
 
@@ -22,6 +22,9 @@ const useFirebase = () => {
                 // The signed-in user info.
                 const user = result.user;
                 setUser(user);
+                //redirect user
+                history.replace(destination);
+                console.log(user);
                 //user data save on mongodb
                 saveUser(user.email, user.displayName, 'PUT');
                 //access token
@@ -137,16 +140,6 @@ const useFirebase = () => {
 
     }
 
-    // admin check
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`, {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' },
-        }).then(res => res.json())
-            .then(data => {
-                setIsAdmin(data?.role)
-            })
-    }, [user?.email])
 
     //save user to database
     const saveUser = (email, displayName, method) => {
@@ -159,6 +152,17 @@ const useFirebase = () => {
         })
             .then()
     }
+
+    // admin check
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`, {
+            method: 'GET',
+            headers: { 'content-type': 'application/json' },
+        }).then(res => res.json())
+            .then(data => {
+                setIsAdmin(data?.role)
+            })
+    }, [user?.email])
 
     return {
         user,
