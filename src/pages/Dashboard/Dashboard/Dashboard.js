@@ -8,6 +8,7 @@ import Pay from '../Pay/Pay';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import AddProduct from '../AddProduct/AddProduct';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -73,6 +74,9 @@ const Dashboard = () => {
                     </Route>
                     <AdminRoute path={`${path}/make-admin`}>
                         <MakeAdmin />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/add-product`}>
+                        <AddProduct />
                     </AdminRoute>
                 </Switch>
             </Container>
