@@ -22,6 +22,8 @@ const useFirebase = () => {
                 // The signed-in user info.
                 const user = result.user;
                 setUser(user);
+                //user data save on mongodb
+                saveUser(user.email, user.displayName, 'PUT');
                 //access token
                 const token = user.accessToken;
                 localStorage.setItem("token", token);
@@ -137,20 +139,20 @@ const useFirebase = () => {
 
     // admin check
     useEffect(() => {
-        fetch(`https://doctors-portal-4405.herokuapp.com/users/${user.email}`, {
+        fetch(`http://localhost:5000/users/${user?.email}`, {
             method: 'GET',
             headers: { 'content-type': 'application/json' },
         }).then(res => res.json())
             .then(data => {
-                setIsAdmin(data.admin)
+                setIsAdmin(data?.role)
             })
     }, [user?.email])
 
-    //save user to the database
+    //save user to database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
 
-        fetch('https://doctors-portal-4405.herokuapp.com/user', {
+        fetch('http://localhost:5000/user', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

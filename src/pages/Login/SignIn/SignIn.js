@@ -9,6 +9,7 @@ import logo from '../../../Images/drone.png';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 const SignIn = () => {
+    const { msg } = useAuth();
     const history = useHistory();
     const location = useLocation();
     //catch private route redirect page url
@@ -39,6 +40,9 @@ const SignIn = () => {
                         <Spinner animation="border" variant="primary" />
                     </div>
                         : <>
+                            {msg && <div className="alert alert-danger" role="alert">
+                                {msg}
+                            </div>}
                             {/* login form */}
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3">

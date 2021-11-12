@@ -14,3 +14,15 @@
 .link-area a:hover{
     color: #0f0ff0;
 }
+
+/* make admin css */
+.row-box {
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in;
+}
+.row-box:hover{
+    box-shadow: 0px 0px 7px 0px rgb(11 29 151 / 20%);
+    border-color: #0b1d97;
+}
