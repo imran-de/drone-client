@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Products.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
 const Products = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/products`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
     return (
         <Container className="my-5">
             <Row xs={1} md={2} className="g-4">
                 <Col sm={12} md={10} lg={8}>
                     <div className="products-container">
-                        <Product />
+                        {
+                            products?.map(product => <Product
+                                key={product?._id}
+                                product={product}
+                            >
+
+                            </Product>)
+                        }
                     </div>
                 </Col>
                 <Col sm={12} md={2} lg={4}>
