@@ -12,6 +12,7 @@ import AddProduct from '../AddProduct/AddProduct';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -81,11 +82,14 @@ const Dashboard = () => {
                     <Route path={`${path}/review`}>
                         <Review />
                     </Route>
-                    <AdminRoute path={`${path}/make-admin`}>
-                        <MakeAdmin />
+                    <AdminRoute path={`${path}/manage-all-orders`}>
+                        <ManageAllOrders />
                     </AdminRoute>
                     <AdminRoute path={`${path}/add-product`}>
                         <AddProduct />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/make-admin`}>
+                        <MakeAdmin />
                     </AdminRoute>
                     <AdminRoute path={`${path}/manage-products`}>
                         <ManageProducts />
