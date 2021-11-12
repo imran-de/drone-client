@@ -29,6 +29,7 @@ const Purchase = () => {
         const orderDate = new Date().toLocaleString();
         data.productId = product?._id;
         data.productName = product?.productName;
+        data.status = 'pending';
         data.orderTime = orderDate;
 
         const confirm = window.confirm(`are you sure to confirm order`);
@@ -39,10 +40,11 @@ const Purchase = () => {
                 body: JSON.stringify(data)
             }).then(res => res.json())
                 .then(result => {
-                    console.log(result);
                     if (result?.insertedId) {
-                        setMsg(`WOW! The product order complete. you can see it on order page`)
+                        alert('WOW! The product order complete. you can see it on order page');
+                        setMsg(`WOW! The product order complete. you can see it on order page`);
                     } else {
+                        alert("Something error! please try again later!");
                         setMsg("Something error! please try again later!");
                     }
                     reset();
