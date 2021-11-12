@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './HomepageProduct.css'
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const HomepageProduct = () => {
+    const history = useHistory();
     const [products, setProducts] = useState([]);
     const productLimit = 6;
     useEffect(() => {
@@ -44,8 +45,11 @@ const HomepageProduct = () => {
                         </div>
                     </div>
                 </div>
-                )}
 
+                )}
+            <div className="text-center pt-3">
+                <button onClick={() => history.replace('/shop')} className="btn btn-outline-warning">MORE DRONE</button>
+            </div>
         </Container>
     );
 };
