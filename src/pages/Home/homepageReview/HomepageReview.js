@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './HomepageReview.css';
 import { Card, Carousel, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+import Star from '../../Shared/Star/Star';
 
 const HomepageReview = () => {
     const history = useHistory();
@@ -44,7 +45,7 @@ const HomepageReview = () => {
                                             <Card.Body className="text-center">
                                                 <Card.Title>{review?.name}</Card.Title>
                                                 <p className="text-uppercase fw-bold">{review?.profession}</p>
-                                                <p>Rate (1 to 5): {review?.rating}</p>
+                                                <Star star={review?.rating}></Star>
                                                 <Card.Text className="px-lg-5">
                                                     {review?.comment}
                                                 </Card.Text>

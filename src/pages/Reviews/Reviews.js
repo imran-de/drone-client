@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import Footer from '../Shared/Footer/Footer';
 import PageBanner from '../Shared/PageBanner/PageBanner';
+import Star from '../Shared/Star/Star';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -30,7 +31,7 @@ const Reviews = () => {
                             <Card.Body className="text-center">
                                 <Card.Title>{review?.name}</Card.Title>
                                 <p className="text-uppercase fw-bold">{review?.profession}</p>
-                                <p>Rate (1 to 5): {review?.rating}</p>
+                                <Star star={review?.rating}></Star>
                                 <Card.Text>
                                     {review?.comment}
                                 </Card.Text>
