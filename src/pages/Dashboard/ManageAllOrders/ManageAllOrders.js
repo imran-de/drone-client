@@ -74,7 +74,8 @@ const ManageAllOrders = () => {
                                 <th>No.</th>
                                 <th>Order Date</th>
                                 <th>Product Name</th>
-                                <th>Contact No.</th>
+                                <th>Phone</th>
+                                <th>Email</th>
                                 <th>Address</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -89,6 +90,7 @@ const ManageAllOrders = () => {
                                     <td>{order?.orderTime}</td>
                                     <td>{order?.productName}</td>
                                     <td>{order?.contact}</td>
+                                    <td>{order?.email}</td>
                                     <td>{order?.address}</td>
                                     <td><button className="btn bg-blue">{order?.status}</button></td>
                                     <td>
