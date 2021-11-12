@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HomepageReview.css';
 import { Card, Carousel, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 
 const HomepageReview = () => {
+    const history = useHistory();
+    const [reviews, setReviews] = useState([]);
+    //load reviews
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data);
+            })
+    }, [])
+
     return (
         <Container fluid>
             <div className="review-section my-5">
@@ -19,55 +31,37 @@ const HomepageReview = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <Carousel>
-                            <Carousel.Item>
-                                <div className="slider d-flex justify-content-center">
-                                    <Card>
-                                        <div className="d-flex justify-content-center align-items-center pt-3">
-                                            <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/testi-user-1.jpg" />
-                                        </div>
-                                        <Card.Body className="text-center">
-                                            <Card.Title>Card Title</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the bulk of
-                                                the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <div className="slider d-flex justify-content-center">
-                                    <Card>
-                                        <div className="d-flex justify-content-center align-items-center pt-3">
-                                            <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/testi-user-1.jpg" />
-                                        </div>
-                                        <Card.Body className="text-center">
-                                            <Card.Title>Card Title</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the bulk of
-                                                the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <div className=" slider d-flex justify-content-center">
-                                    <Card>
-                                        <div className="d-flex justify-content-center align-items-center pt-3">
-                                            <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/testi-user-1.jpg" />
-                                        </div>
-                                        <Card.Body className="text-center">
-                                            <Card.Title>Card Title</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the bulk of
-                                                the card's content.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </Carousel.Item>
+
+                            {
+                                reviews?.map(review => <Carousel.Item
+                                    key={review?._id}
+                                >
+                                    <div className="slider d-flex justify-content-center">
+                                        <Card>
+                                            <div className="d-flex justify-content-center align-items-center pt-3">
+                                                <Card.Img variant="top" src={review?.photoURL} />
+                                            </div>
+                                            <Card.Body className="text-center">
+                                                <Card.Title>{review?.name}</Card.Title>
+                                                <p className="text-uppercase fw-bold">{review?.profession}</p>
+                                                <p>Rate (1 to 5): {review?.rating}</p>
+                                                <Card.Text className="px-lg-5">
+                                                    {review?.comment}
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </div>
+                                </Carousel.Item>
+
+                                )
+                            }
+
+
                         </Carousel>
+
+                        <div className="text-center pt-3">
+                            <button onClick={() => history.replace('/reviews')} className="btn btn-outline-success">SEE ALL REVIEW</button>
+                        </div>
                     </div>
                 </div>
             </div>
