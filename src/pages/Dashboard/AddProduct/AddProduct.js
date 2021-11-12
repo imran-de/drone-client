@@ -20,7 +20,7 @@ const AddProduct = () => {
                     } else {
                         setMsg("Something error! please try again later!");
                     }
-                    // reset();
+                    reset();
                 })
         }
     }
