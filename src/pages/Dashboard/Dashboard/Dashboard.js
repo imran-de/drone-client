@@ -9,6 +9,7 @@ import PageBanner from '../../Shared/PageBanner/PageBanner';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -77,6 +78,9 @@ const Dashboard = () => {
                     </AdminRoute>
                     <AdminRoute path={`${path}/add-product`}>
                         <AddProduct />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manage-products`}>
+                        <ManageProducts />
                     </AdminRoute>
                 </Switch>
             </Container>
