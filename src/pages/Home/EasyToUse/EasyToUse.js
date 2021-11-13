@@ -15,7 +15,7 @@ const EasyToUse = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6} className="d-flex align-items-center">
+                    <Col md={6} className="d-flex align-items-center my-3 my-md-0">
                         <div className="text-light pe-lg-5">
                             <h6 className="text-light fw-bolder text-uppercase">INTUITIVE, INNOVATIVE</h6>
                             <h1 className="fw-bolder">Easy to USE</h1>

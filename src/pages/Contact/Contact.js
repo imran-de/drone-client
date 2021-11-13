@@ -61,7 +61,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div>
+                            <div className="mb-4 mb-md-0">
                                 <span className="blue fw-bolder">Stay In Touch: </span>
                                 <span className="blue social-icon"><i className="fab fa-facebook-f"></i></span>
                                 <span className="blue social-icon px-2"><i className="fab fa-twitter"></i></span>
