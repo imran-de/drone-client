@@ -19,7 +19,7 @@ const HomepageProduct = () => {
                     <div className="product-title text-center">
                         <span className="product-subtitle">World's most advanced drones</span>
                         <h2 className="fs-1 fw-bolder text-center">Trending Products</h2>
-                        <p>With new trends constantly coming up, we've decided to freshen up this list with the trending products to sell {products?.length}</p>
+                        <p>With new trends constantly coming up, we've decided to freshen up this list with the trending products to sell</p>
                     </div>
                 </div>
             </div>
