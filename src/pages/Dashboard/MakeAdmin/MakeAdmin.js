@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Button, Col } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../hooks/useAuth';
 
 const MakeAdmin = () => {
     const [msg, setMsg] = useState('');
     const { register, handleSubmit, reset } = useForm();
+    const { token } = useAuth();
     const onSubmit = data => {
         const confirm = window.confirm(`are you sure to make admin "${data?.email}"`);
         if (confirm) {
             fetch('https://imran-drone.herokuapp.com/users/admin', {
                 method: "POST",
-                headers: { 'content-type': "application/json" },
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': "application/json"
+                },
                 body: JSON.stringify(data)
             }).then(res => res.json())
                 .then(result => {
