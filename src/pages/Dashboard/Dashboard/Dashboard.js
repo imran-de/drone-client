@@ -22,8 +22,8 @@ const Dashboard = () => {
             <PageBanner pageTitle={`${user?.displayName} ${path}`}></PageBanner>
             <Container className="pt-4">
                 {/* profile toggle */}
-                <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                    <i className="fas fa-bars"></i> Menu
+                <button className="btn btn-primary dashboard-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <i className="fas fa-bars"></i> Dashboard Menu
                 </button>
 
 
