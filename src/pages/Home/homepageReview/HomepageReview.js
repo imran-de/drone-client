@@ -17,8 +17,8 @@ const HomepageReview = () => {
     }, [])
 
     return (
-        <Container fluid>
-            <div className="review-section my-5">
+        <Container fluid className="p-0">
+            <div className="review-section mb-5">
                 <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-6 col-sm-10 col-md-8">
                         <div className="section-title text-center">

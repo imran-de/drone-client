@@ -13,7 +13,7 @@ const HomepageProduct = () => {
             .then(data => setProducts(data))
     }, [])
     return (
-        <Container>
+        <Container className="mb-5">
             <div className="row justify-content-center">
                 <div className="col-xl-6 col-lg-6 col-sm-10 col-md-8">
                     <div className="product-title text-center">

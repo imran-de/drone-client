@@ -17,11 +17,8 @@ const HomeBanner = () => {
                 <div className="row justify-content-xl-start justify-content-lg-center justify-content-start">
                     <div className="col-xl-8 col-lg-9 col-md-10">
                         <div className="banner-content">
-                            <h1>Professional
-                                Drone For
-                                Every Business</h1>
-                            <p>Welcome to the best drone website in the world.We have the most up-to-date
-                                information on drones for sale and new products everyday. Shop now!</p>
+                            <h1>Professional  Drone For  Every Business</h1>
+                            <p>Welcome to the best drone website in the world.We have the most up-to-date information on drones for sale and new products everyday. Shop now!</p>
                             <div className="banner-buttons">
                                 <Link className="banner-button" to="/shop">buy now</Link>
                                 <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=e8eSfqaaGXQ&list=RDe8eSfqaaGXQ&start_radio=1">

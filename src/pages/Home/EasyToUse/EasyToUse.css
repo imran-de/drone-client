@@ -1,0 +1,16 @@
+.easy-to-use{
+    background: linear-gradient(24deg, #0e154b 0%, #3d49cd 100%);
+}
+.part-img {
+    position: relative;
+    padding-top: 80px;
+ }
+.part-img img:first-child {
+      width: auto;
+      max-width: none;
+     }
+.part-img img:last-child {
+      position: absolute;
+      top: 100px;
+      animation: circle2 6s linear infinite;
+ }
