@@ -8,7 +8,7 @@ import logo from '../../../Images/drone.png';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 const Register = () => {
-    const { signInWithGoogle, signInWithFacebook, signInWithGithub, registerWithEmailPassword, isLoading, user } = useAuth();
+    const { signInWithGoogle, signInWithFacebook, signInWithGithub, registerWithEmailPassword, isLoading, msg } = useAuth();
     const [matched, setMatched] = useState(true);
     const history = useHistory();
     const location = useLocation();
@@ -23,14 +23,13 @@ const Register = () => {
         } else {
             setMatched(true);
             registerWithEmailPassword(data.fullName, data.email, data.password, history, redirect_uri);
-            console.log(user)
         }
     }
 
     return (
         <Container fluid>
             <Navigation />
-            <Row className="d-flex justify-content-center">
+            <Row className="d-flex justify-content-center mt-5">
                 <Col sm={8} md={4} className="login-box px-4">
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="text-center pt-5 pb-3">
@@ -38,6 +37,10 @@ const Register = () => {
                             <h2 className="fs-3 blue">Create Your Account</h2>
                         </div>
                     </div>
+                    {/* msg */}
+                    {msg && <div className="alert alert-danger" role="alert">
+                        {msg}
+                    </div>}
                     {/* preloader add */}
                     {isLoading ? <div className="d-flex justify-content-center">
                         <Spinner animation="border" variant="primary" />
@@ -46,7 +49,8 @@ const Register = () => {
                         <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Group className="mb-3">
                                 <Form.Label htmlFor="name">Full Name</Form.Label>
-                                <Form.Control type="text" id="name" {...register("fullName")} placeholder="Your Name" />
+                                <Form.Control min="5" max="20" type="text" id="name" {...register("fullName")} placeholder="Your Name" />
+                                <span className="text-info">Name length must be 5-20.</span>
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label htmlFor="email">Email</Form.Label>
@@ -55,11 +59,12 @@ const Register = () => {
                             <Form.Group className="mb-3">
                                 <Form.Label htmlFor="password">Password</Form.Label>
                                 <Form.Control className={`${!matched ? 'border border-danger' : ''}`} type="password" id="password" {...register("password")} placeholder="your password" />
+                                {!matched && <span className="text-danger">Password must be same.</span>}
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label htmlFor="confirm-password">Confirm Password</Form.Label>
                                 <Form.Control className={`${!matched ? 'border border-danger' : ''}`} type="password" id="Confirm-password" {...register("confirmPassword")} placeholder="your password" />
-                                {!matched && <span className="text-danger">This field is required</span>}
+                                {!matched && <span className="text-danger">confirm password must be same password.</span>}
                             </Form.Group>
                             <div className="text-center">
                                 <Button type="submit" className="bg-blue px-5">Create My Account</Button>

@@ -25,7 +25,7 @@ const SignIn = () => {
         <Container fluid>
             <Navigation />
 
-            <Row className="d-flex justify-content-center">
+            <Row className="d-flex justify-content-center mt-5">
                 <Col sm={8} md={4} className="login-box px-4">
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="text-center pt-5 pb-3">
