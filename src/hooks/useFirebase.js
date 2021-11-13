@@ -52,7 +52,6 @@ const useFirebase = () => {
                 //access token
                 const token = user.accessToken;
                 localStorage.setItem("token", token);
-                // ...
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -88,7 +87,6 @@ const useFirebase = () => {
             .catch((error) => {
                 const errorMessage = error.message;
                 setMsg(errorMessage);
-                // ..
             }).finally(setIsLoading(false));
     }
 
