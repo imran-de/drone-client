@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 import ManageProduct from '../manageProduct/ManageProduct';
 
 const ManageProducts = () => {
     const [msg, setMsg] = useState('');
     const [products, setProducts] = useState([]);
+    const { token } = useAuth();
     //load all products
     useEffect(() => {
         fetch('https://imran-drone.herokuapp.com/products')
@@ -18,7 +20,10 @@ const ManageProducts = () => {
         if (confirm) {
             fetch(`https://imran-drone.herokuapp.com/product/${id}`, {
                 method: "DELETE",
-                headers: { "content-type": "application/json" }
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    "content-type": "application/json"
+                }
 
             })
                 .then(res => res.json())

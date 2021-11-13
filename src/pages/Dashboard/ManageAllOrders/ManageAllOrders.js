@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Spinner, Table } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [statusUpdate, setStatusUpdate] = useState(false);
+    const { token } = useAuth();
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://imran-drone.herokuapp.com/orders`)
+        fetch(`https://imran-drone.herokuapp.com/orders`, {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
                 setLoading(false);
             })
-    }, [statusUpdate])
+    }, [statusUpdate, token])
 
     //handleStatus
     const handleStatus = (id, status) => {
@@ -23,7 +29,10 @@ const ManageAllOrders = () => {
             setStatusUpdate(false);
             fetch(`https://imran-drone.herokuapp.com/order?id=${id}&status=${status}`, {
                 method: "PUT",
-                headers: { "content-type": "application/json" },
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    "content-type": "application/json"
+                },
             })
                 .then(res => res.json())
                 .then(result => {
@@ -43,7 +52,10 @@ const ManageAllOrders = () => {
         if (confirm) {
             fetch(`https://imran-drone.herokuapp.com/order/${id}`, {
                 method: "DELETE",
-                headers: { "content-type": "application/json" },
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    "content-type": "application/json"
+                },
             })
                 .then(res => res.json())
                 .then(result => {

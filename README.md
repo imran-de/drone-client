@@ -9,6 +9,7 @@ This project is for selling drone's [Live site of drone](https://drone-45254.web
 - firebase authentication (login using google, email-pass) 
 - font awesome v5 library for icon
 - using poppins google fonts
+- jwt for verify user operations permission
 
 ## Available Functionality
 - you can see latest drone collection
