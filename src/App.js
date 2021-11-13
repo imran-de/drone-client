@@ -11,6 +11,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Reviews from './pages/Reviews/Reviews';
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
               <About />
             </Route>
             <Route exact path="/contact">
-              <About />
+              <Contact />
             </Route>
             <Route path="/shop">
               <Shop />
