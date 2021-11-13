@@ -11,7 +11,7 @@ const Feature = () => {
                         <div className="row">
                             <div className="col-4 d-flex align-items-center justify-content-center">
                                 <div className="feature-icon-box">
-                                    <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/svg/feature-icon-1.png" />
+                                    <Card.Img variant="top" src="https://i.ibb.co/cbG7TZ7/feature-icon-1.png" />
                                 </div>
                             </div>
                             <div className="col-8 text-start">
@@ -30,7 +30,7 @@ const Feature = () => {
                         <div className="row">
                             <div className="col-4 d-flex align-items-center justify-content-center">
                                 <div className="feature-icon-box">
-                                    <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/svg/feature-icon-2.png" />
+                                    <Card.Img variant="top" src="https://i.ibb.co/wwZ0BSK/feature-icon-2.png" />
                                 </div>
                             </div>
                             <div className="col-8">
@@ -49,7 +49,7 @@ const Feature = () => {
                         <div className="row">
                             <div className="col-4 d-flex align-items-center justify-content-center">
                                 <div className="feature-icon-box">
-                                    <Card.Img variant="top" src="http://pixner.net/todas/todas-demo/assets/img/svg/feature-icon-3.png" />
+                                    <Card.Img variant="top" src="https://i.ibb.co/Mc97fPB/feature-icon-3.png" />
                                 </div>
                             </div>
                             <div className="col-8">

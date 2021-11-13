@@ -139,27 +139,27 @@ const Footer = () => {
                                 <ul>
                                     <li>
                                         <a href="#home">
-                                            <img src="http://pixner.net/todas/todas-demo/assets/img/partner-1.jpg" alt="" />
+                                            <img src="https://i.ibb.co/3zhpYdg/partner-1.jpg" alt="" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#home">
-                                            <img src="http://pixner.net/todas/todas-demo/assets/img/partner-2.jpg" alt="" />
+                                            <img src="https://i.ibb.co/MCKbrjN/partner-2.jpg" alt="" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#home">
-                                            <img src="http://pixner.net/todas/todas-demo/assets/img/partner-3.jpg" alt="" />
+                                            <img src="https://i.ibb.co/GP6TZ4j/partner-3.jpg" alt="" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#home">
-                                            <img src="http://pixner.net/todas/todas-demo/assets/img/partner-4.jpg" alt="" />
+                                            <img src="https://i.ibb.co/5Ypb7qk/partner-4.jpg" alt="" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#home">
-                                            <img src="http://pixner.net/todas/todas-demo/assets/img/partner-5.jpg" alt="" />
+                                            <img src="https://i.ibb.co/gDwgGLr/partner-5.jpg" alt="" />
                                         </a>
                                     </li>
                                 </ul>
