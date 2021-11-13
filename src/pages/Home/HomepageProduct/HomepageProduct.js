@@ -29,8 +29,8 @@ const HomepageProduct = () => {
                 products?.map(product => <div
                     key={product?._id}
                     className="row product-box">
-                    <div className="col-md-3">
-                        <img className="img-fluid" src={product?.productURL} alt="" />
+                    <div className="col-md-3  d-flex justify-content-center">
+                        <img className="product-image" src={product?.productURL} alt="" />
                     </div>
                     <div className="col-md-7 d-flex align-items-center">
                         <div>
