@@ -30,25 +30,25 @@ const Footer = () => {
                                 <span className="title">Company Info</span>
                                 <ul>
                                     <li>
-                                        <a href="#home">About Us</a>
+                                        <a href="/about">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Careers</a>
+                                        <a href="/careers">Careers</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Affiliate Program</a>
+                                        <a href="/affiliate">Affiliate Program</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Authenticity Guarantee</a>
+                                        <a href="/guarantee">Authenticity Guarantee</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Customer Reviews</a>
+                                        <a href="/reviews">Customer Reviews</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Privacy Policy</a>
+                                        <a href="/policy">Privacy Policy</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Terms & Conditions</a>
+                                        <a href="/conditions">Terms & Conditions</a>
                                     </li>
                                 </ul>
                             </div>
@@ -58,25 +58,25 @@ const Footer = () => {
                                 <span className="title">Help Center</span>
                                 <ul>
                                     <li>
-                                        <a href="#home">Order Information</a>
+                                        <a href="/dashboard/my-orders">Order Information</a>
                                     </li>
                                     <li>
-                                        <a href="#home">hipping Options</a>
+                                        <a href="/shop">hipping Options</a>
                                     </li>
                                     <li>
-                                        <a href="#home">International Shipping</a>
+                                        <a href="#shipping-places">International Shipping</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Payment Options</a>
+                                        <a href="/dashboard/pay">Payment Options</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Returning & Exchanging</a>
+                                        <a href="#privacy">Returning & Exchanging</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Product Warranty</a>
+                                        <a href="/waranty">Product Warranty</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Repair Center</a>
+                                        <a href="/contact">Repair Center</a>
                                     </li>
                                 </ul>
                             </div>
@@ -86,16 +86,16 @@ const Footer = () => {
                                 <span className="title">My Account</span>
                                 <ul>
                                     <li>
-                                        <a href="#home">Manage Your Account</a>
+                                        <a href="/dashboard">Manage Your Account</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Gift Cards</a>
+                                        <a href="#cards">Gift Cards</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Order Sttatus</a>
+                                        <a href="/dashboard/my-orders">Order Status</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Gift Certificates</a>
+                                        <a href="/gift">Gift Certificates</a>
                                     </li>
                                 </ul>
                             </div>
@@ -105,22 +105,22 @@ const Footer = () => {
                                 <span className="title">Products</span>
                                 <ul>
                                     <li>
-                                        <a href="#home">All Drones</a>
+                                        <a href="/shop">All Drones</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Agriculture</a>
+                                        <a href="/shop">Best Collection</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Media</a>
+                                        <a href="/Media">Media</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Drone Accessories</a>
+                                        <a href="/blog">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Construction & Surveying</a>
+                                        <a href="/Construction">Construction & Surveying</a>
                                     </li>
                                     <li>
-                                        <a href="#home">Infrastructure</a>
+                                        <a href="/Infrastructure">Infrastructure</a>
                                     </li>
                                 </ul>
                             </div>
@@ -132,7 +132,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6 col-lg-6 d-xl-flex d-lg-flex d-block align-items-center">
-                            <p className="copyright-text">Copyright © 2020. All Rights Reserved By <a href="#home">Drone</a></p>
+                            <p className="copyright-text">Copyright © 2021. All Rights Reserved By <a href="/">Drone</a>. Developed by <a className="fw-bolder" href="#imran">IMRAN AHMED</a></p>
                         </div>
                         <div className="col-xl-6 col-lg-6">
                             <div className="partners">

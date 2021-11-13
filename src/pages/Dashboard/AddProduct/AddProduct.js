@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../hooks/useAuth';
 
 const AddProduct = () => {
     const [msg, setMsg] = useState('');
-    const { token } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         const confirm = window.confirm(`are you sure to add product "${data?.productName}"`);
         if (confirm) {
             fetch('https://imran-drone.herokuapp.com/add-product', {
                 method: "POST",
-                headers: {
-                    'authorization': `Bearer ${token}`,
-                    'content-type': "application/json"
-                },
+                headers: { 'content-type': "application/json" },
                 body: JSON.stringify(data)
             }).then(res => res.json())
                 .then(result => {

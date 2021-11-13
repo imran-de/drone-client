@@ -4,23 +4,19 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
-    const { user, token } = useAuth();
+    const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://imran-drone.herokuapp.com/orders?email=${user?.email}`, {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
+        fetch(`https://imran-drone.herokuapp.com/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
                 setLoading(false);
             })
-    }, [user?.email, token])
+    }, [user?.email])
 
     //handle delete
     const handleCancel = (id) => {
@@ -28,10 +24,7 @@ const MyOrders = () => {
         if (confirm) {
             fetch(`https://imran-drone.herokuapp.com/order/${id}`, {
                 method: "DELETE",
-                headers: {
-                    'authorization': `Bearer ${token}`,
-                    "content-type": "application/json"
-                },
+                headers: { "content-type": "application/json" },
             })
                 .then(res => res.json())
                 .then(result => {
