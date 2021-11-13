@@ -20,7 +20,7 @@ const Dashboard = () => {
     return (
         <Container fluid className="m-0 p-0">
             <PageBanner pageTitle={`${user?.displayName} ${path}`}></PageBanner>
-            <Container className="pt-4">
+            <Container className="my-5">
                 {/* profile toggle */}
                 <button className="btn btn-primary dashboard-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <i className="fas fa-bars"></i> Dashboard Menu

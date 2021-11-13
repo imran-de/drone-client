@@ -1,3 +1,6 @@
+.offcanvas{
+    width: 300px;
+}
 .dashboard-toggle{
     position: absolute;
     top: 20%;
@@ -34,5 +37,8 @@
     .dashboard-toggle{
         position: absolute;
         top: 30%;
+    }
+    .offcanvas{
+        width: 260px;
     }
 }
