@@ -33,7 +33,7 @@ const Contact = () => {
                         <div className="row mb-3">
                             <div className="col-2 d-flex align-items-center justify-content-center border">
                                 <div className="contact-icon-box">
-                                    <h1><i class="fas fa-phone-alt text-success fs-1"></i></h1>
+                                    <h1><i className="fas fa-phone-alt text-success fs-1"></i></h1>
                                 </div>
                             </div>
                             <div className="col-8 text-start">
@@ -48,7 +48,7 @@ const Contact = () => {
                         <div className="row mb-3">
                             <div className="col-2 d-flex align-items-center justify-content-center border">
                                 <div className="contact-icon-box">
-                                    <h1><i class="fas fa-globe text-success fs-1"></i></h1>
+                                    <h1><i className="fas fa-globe text-success fs-1"></i></h1>
                                 </div>
                             </div>
                             <div className="col-8 text-start">
@@ -74,7 +74,7 @@ const Contact = () => {
                     </Col>
 
                     <Col className="contact" md={6}>
-                        <div class="contact-form">
+                        <div className="contact-form">
                             <h3>Let us hear your thoughts</h3>
                             <form>
                                 <input type="text" placeholder="Your name" />
