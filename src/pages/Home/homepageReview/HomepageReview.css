@@ -1,7 +1,10 @@
-.review-section{
-    padding: 120px 0 120px;
+.review{
     background-image: -moz-radial-gradient(50% 50%, circle closest-side, #05358a -50%, #000046 105%);
     background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #053c9b -50%, #000046 105%);
+}
+.review-section{
+    padding: 120px 0 120px;
+    
     position: relative;
     z-index: 2;
 }
