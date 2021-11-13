@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signOut, updateProfile, onAuthStateChanged, getIdToken } from "firebase/auth";
+import { getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signOut, updateProfile, onAuthStateChanged, getIdToken, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth";
 import initializeFirebase from "../firebase/firebase.init";
 
 initializeFirebase();
@@ -36,6 +36,54 @@ const useFirebase = () => {
                 setMsg(errorMessage);
             }).finally(setIsLoading(false));
 
+    }
+
+    //sign in with facebook
+    const signInWithFacebook = (history, destination) => {
+        setIsLoading(true);
+        const provider = new FacebookAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // The signed-in user info.
+                const user = result.user;
+                setUser(user);
+                setMsg("LogIn Success");
+                //user data save on mongodb
+                saveUser(user.email, user.displayName, 'PUT');
+                //access token
+                const token = user.accessToken;
+                localStorage.setItem("token", token);
+                //redirect user
+                history.replace(destination);
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorMessage = error.message;
+                setMsg(errorMessage);
+            }).finally(setIsLoading(false));
+    }
+
+    //sign in with github 
+    const signInWithGithub = (history, destination) => {
+        setIsLoading(true);
+        const provider = new GithubAuthProvider()
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // The signed-in user info.
+                const user = result.user;
+                setUser(user);
+                setMsg("LogIn Success");
+                //user data save on mongodb
+                saveUser(user.email, user.displayName, 'PUT');
+                //access token
+                const token = user.accessToken;
+                localStorage.setItem("token", token);
+                //redirect user
+                history.replace(destination);
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorMessage = error.message;
+                setMsg(errorMessage);
+            }).finally(setIsLoading(false));
     }
 
     //signIn with email and password
@@ -175,6 +223,8 @@ const useFirebase = () => {
         token,
         msg,
         signInWithGoogle,
+        signInWithFacebook,
+        signInWithGithub,
         registerWithEmailPassword,
         signInWithEmailPassword,
         logOut,

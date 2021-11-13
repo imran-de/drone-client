@@ -8,13 +8,13 @@ import logo from '../../../Images/drone.png';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 const Register = () => {
+    const { signInWithGoogle, signInWithFacebook, signInWithGithub, registerWithEmailPassword, isLoading, user } = useAuth();
     const [matched, setMatched] = useState(true);
     const history = useHistory();
     const location = useLocation();
     //catch private route redirect page url
     const redirect_uri = location.state?.from || '/';
 
-    const { signInWithGoogle, registerWithEmailPassword, isLoading, user } = useAuth();
     //react hook form
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
@@ -73,11 +73,11 @@ const Register = () => {
                                     <i className="fab fa-google pe-3"></i>
                                     Sign-in with Google
                                 </button>
-                                <button className="d-block btn btn-outline-primary">
+                                <button onClick={() => signInWithFacebook(history, redirect_uri)} className="d-block btn btn-outline-primary">
                                     <i className="fab fa-facebook-square pe-3"></i>
                                     Sign-in with Facebook
                                 </button>
-                                <button className="d-block btn btn-outline-dark">
+                                <button onClick={() => signInWithGithub(history, redirect_uri)} className="d-block btn btn-outline-dark">
                                     <i className="fab fa-github pe-3"></i>
                                     Sign-in with Github
                                 </button>
